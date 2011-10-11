@@ -22,14 +22,18 @@ namespace MapMakerTool
             //Will take in input
             //TakeInDefinition();
 
-            //For now all lists are [3,3,2]
+            //For now all lists are [3,3,3]
             //When finished they will be user defined and WorldMap will be based on the arrays brought in.
+            //[i,j,k]
+            //i = level
+            //j = row (horizantal)
+            //k = col (vertical)
 
             int[, ,] RoomInput;
             char[, ,] RoomType;
 
-            RoomInput = new int[3, 4, 2];
-            RoomType = new char[3, 4, 2];
+            RoomInput = new int[3, 3, 3];
+            RoomType = new char[3, 3, 3];
             WorldMap = new Room[RoomInput.GetLength(0), RoomInput.GetLength(1), RoomInput.GetLength(2)];
 
             for(int i =0;i<RoomInput.GetLength(0);i++)
@@ -40,7 +44,7 @@ namespace MapMakerTool
                     {
                         
                         RoomInput[i,j,k] = 0;
-                        //Console.Write("" + RoomInput[i,j,k]);
+                        
                     }
                     Console.WriteLine();
                 }
@@ -48,24 +52,31 @@ namespace MapMakerTool
                 Console.WriteLine();
             }
 
-            RoomInput[1, 3, 0] = 4;
-            RoomInput[0, 1, 0] = 0;
-            RoomInput[2, 2, 0] = 0;
+            //Level 1
+            RoomInput[0, 0, 1] = 4;
+            RoomInput[0, 1, 0] = 6;
+            RoomInput[0, 1, 1] = 11;
+            RoomInput[0, 1, 2] = 1;
+            RoomInput[0, 2, 0] = 36;
+            RoomInput[0, 2, 1] = 1;
+           
 
-            for(int i =0;i<RoomInput.GetLength(0);i++)
-            {
-                for(int j =0;j<RoomInput.GetLength(1);j++)
-                {
-                    for(int k =0;k<RoomInput.GetLength(2);k++)
-                    {
-                        Console.Write("" + RoomInput[i, j, k]);
-                    }
-                    Console.WriteLine();
-                }
+            //Level 2
+            
+            RoomInput[1, 1, 1] = 52;
+            RoomInput[1, 2, 0] = 18;
+            RoomInput[1, 2, 1] = 9;
 
-                Console.WriteLine();
-            }
-            //RoomInput[
+            //Level 3
+            RoomInput[2, 1, 0] = 2;
+            RoomInput[2, 1, 1] = 17;
+            
+
+
+           
+
+            CreateRooms(RoomInput,RoomType);
+            
            
         }
 
@@ -77,6 +88,86 @@ namespace MapMakerTool
 
         }
 
+        public void CreateRooms(int[,,] exits, char[,,] type)
+        {
+            for (int i = 0; i < WorldMap.GetLength(0); i++)
+            {
+                for (int j = 0; j < WorldMap.GetLength(1); j++)
+                {
+                    for (int k = 0; k < WorldMap.GetLength(2); k++)
+                    {
+                        WorldMap[i, j, k] = new Room();
+                    }
+                }
+            }
+
+            for (int i = 0; i < WorldMap.GetLength(0); i++)
+            {
+                for (int j = 0; j < WorldMap.GetLength(1); j++)
+                {
+                    for (int k = 0; k < WorldMap.GetLength(2); k++)
+                    {
+                        if (exits[i, j, k] != 0)
+                        {
+                            WorldMap[i, j, k] = CreateRoom(exits[i, j, k], type[i, j, k]);
+
+                        } 
+                    }
+                }
+            }
+
+
+
+
+        }
+
+        public Room CreateRoom(int exits, char type)
+        {
+            //temp room variable
+            Room temp = new Room();
+
+            //Array of 1's and 0's to determine where exits and maybe the type of the room eventually
+            int[] bin = ToBinary(exits);
+
+            //Compare binary to specific tests
+            //1st bit = east
+            //2nd = west
+            //3rd = south
+            //4th = north
+            // 5th = up
+            // 6th = down
+            //7th and 8th may mean type eventually.
+
+
+            
+
+
+            return new Room();
+
+
+        }
+
+        public int[] ToBinary(int i)
+        {
+            int[] bin = new int[8];
+            int count = 0;
+            while (i != 0)
+            {
+                bin[count] = i % 2;
+                i /= 2;
+                count++;
+               
+
+
+            }
+            for (int j = 0; j < 8; j++)
+            {
+                Console.Write(bin[j]);
+            }
+
+
+            return bin;
+        }
 
     }
 }
