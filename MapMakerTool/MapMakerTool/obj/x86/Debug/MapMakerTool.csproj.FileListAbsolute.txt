@@ -1,0 +1,5 @@
+C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\bin\Debug\MapMakerTool.exe
+C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\bin\Debug\MapMakerTool.pdb
+C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\MapMakerTool.exe
+C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\MapMakerTool.pdb

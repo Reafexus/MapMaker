@@ -12,7 +12,10 @@ namespace MapMakerTool
 
         static void Main(string[] args)
         {
+            World w = new World();
 
+
+            Console.Read();
 
 
         }
