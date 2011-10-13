@@ -22,6 +22,13 @@ namespace MapMakerTool
         /// <param name="s">Direction to add</param>
         public void AddExit(String s)
         {
+            if (s == "east") { }
+            if (s == "west") { }
+            if (s == "south") { }
+            if (s == "north") { }
+            if (s == "up") { }
+            if (s == "down") { }
+
 
 
         }
@@ -33,7 +40,10 @@ namespace MapMakerTool
         /// <param name="s">Type of room made</param>
         public void changeType(String s)
         {
-
+            if (s == "Enemies") { }
+            if (s == "Treasure") { }
+            if (s == "Boss") { }
+            if (s == "Empty") { }
         }
 
 

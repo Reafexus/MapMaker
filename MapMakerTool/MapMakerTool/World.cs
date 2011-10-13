@@ -109,7 +109,7 @@ namespace MapMakerTool
                     {
                         if (exits[i, j, k] != 0)
                         {
-                            WorldMap[i, j, k] = CreateRoom(exits[i, j, k], type[i, j, k]);
+                            WorldMap[i, j, k] = CreateRoom(exits[i, j, k]);
 
                         } 
                     }
@@ -121,7 +121,7 @@ namespace MapMakerTool
 
         }
 
-        public Room CreateRoom(int exits, char type)
+        public Room CreateRoom(int exits)
         {
             //temp room variable
             Room temp = new Room();
@@ -138,9 +138,46 @@ namespace MapMakerTool
             // 6th = down
             //7th and 8th may mean type eventually.
 
-
-            
-
+            if (bin[0] == 1)
+            {
+                temp.AddExit("east");
+            }
+            if (bin[1] == 1)
+            {
+                temp.AddExit("west");
+            }
+            if (bin[2] == 1)
+            {
+                temp.AddExit("south");
+            }
+            if (bin[3] == 1)
+            {
+                temp.AddExit("north");
+            }
+            if (bin[4] == 1)
+            {
+                temp.AddExit("up");
+            }
+            if (bin[5] == 1)
+            {
+                temp.AddExit("down");
+            } 
+            if (bin[6] == 0 && bin[7] == 0)
+            {
+                temp.changeType("Empty");
+            }
+            if (bin[6] == 0 && bin[7] == 1)
+            {
+                temp.changeType("Treasures");
+            }
+            if (bin[6] == 1 && bin[7] == 0)
+            {
+                temp.changeType("Enemies");
+            }
+            if (bin[6] == 1 && bin[7] == 1)
+            {
+                temp.changeType("Boss");
+            }
 
             return new Room();
 
