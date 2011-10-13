@@ -201,7 +201,7 @@ namespace MapMakerTool
             {
                 Console.Write(bin[j]);
             }
-
+            Console.WriteLine();
 
             return bin;
         }
