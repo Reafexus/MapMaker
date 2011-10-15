@@ -9,7 +9,7 @@ namespace MapMakerTool
     {
 
         Room[, ,] WorldMap;
-        int[, ,] RoomInput;
+        public int[, ,] RoomInput;
         private int width;
         private int height;
         private int depth;
@@ -234,21 +234,23 @@ namespace MapMakerTool
 
             int[, ,] temp = new int[z, x, y];
 
-            for (int i = 0; i < z || i < RoomInput.GetLength(0); i++)
+            for (int i = 0; i < z && i < RoomInput.GetLength(0); i++)
             {
-                for (int j = 0; j < x || j < RoomInput.GetLength(1); j++)
+                for (int j = 0; j < x && j < RoomInput.GetLength(1); j++)
                 {
-                    for (int k = 0; k < y || k < RoomInput.GetLength(2); k++)
+                    for (int k = 0; k < y && k < RoomInput.GetLength(2); k++)
                     {
                         if (i < z && j < x && k < y)
                             temp[i, j, k] = RoomInput[i, j, k];
                         else
-                            temp[i, j, k] = RoomInput[i, j, k];
+                            temp[i, j, k] = 0;
 
                     
                     }
                 }
             }
+
+            RoomInput = temp;
 
 
 
