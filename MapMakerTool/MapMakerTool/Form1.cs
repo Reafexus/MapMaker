@@ -11,29 +11,43 @@ namespace MapMakerTool
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private World world;
+
+        public Form1(World w)
         {
+            world = w;
             InitializeComponent();
         }
 
-        private void radioButton9_CheckedChanged(object sender, EventArgs e)
+       
+
+        private void Height_TextChanged(object sender, EventArgs e)
         {
 
+            world.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(textBox2.Text));
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            world.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(textBox2.Text));
         }
 
-        private void textBox10_TextChanged(object sender, EventArgs e)
+        private void Width_TextChanged(object sender, EventArgs e)
         {
-
+            if (int.Parse(Width.Text) > 8)
+            {
+                Width.Text = world.Width.ToString();
+            }
+            world.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(textBox2.Text));
         }
 
-        private void textBox4_MouseDown(object sender, MouseEventArgs e)
-        {
+       
 
-        }
+        
+
+
+        
+
+        
     }
 }

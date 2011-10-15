@@ -14,7 +14,7 @@ namespace MapMakerTool
         static void Main(string[] args)
         {
             World w = new World();
-            Form1 f = new Form1();
+            Form1 f = new Form1(w);
             Application.Run(f);
 
 

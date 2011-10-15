@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MapMakerTool
 {
-    class Room
+    public class Room
     {
         Room[] rooms;
         Boolean[] roomDef;

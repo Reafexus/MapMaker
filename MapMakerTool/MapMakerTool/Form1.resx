@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Current Level:            Depth being displayed
+Size of World :           Width x Height x Depth
+Boxes under Level:    Number associated with 
+                                  Exits and Type of room 
+</value>
+  </data>
 </root>

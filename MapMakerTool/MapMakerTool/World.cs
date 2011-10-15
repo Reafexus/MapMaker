@@ -5,10 +5,30 @@ using System.Text;
 
 namespace MapMakerTool
 {
-    class World
+    public class World
     {
 
         Room[, ,] WorldMap;
+        int[, ,] RoomInput;
+        private int width;
+        private int height;
+        private int depth;
+
+        public int Width 
+        {
+            get{ return width;}
+        }
+        
+         
+        
+        public int Height 
+        {
+            get{ return height;}
+        }
+        public int Depth
+        {
+            get { return depth; }
+        }
 
         public World()
         {
@@ -29,7 +49,7 @@ namespace MapMakerTool
             //j = row (horizantal)
             //k = col (vertical)
 
-            int[, ,] RoomInput;
+            
             char[, ,] RoomType;
 
             RoomInput = new int[3, 3, 3];
@@ -204,6 +224,34 @@ namespace MapMakerTool
             Console.WriteLine();
 
             return bin;
+        }
+
+        public void ChangeWorldSize(int x, int y, int z)
+        {
+            width = x;
+            height = y;
+            depth = z;
+
+            int[, ,] temp = new int[z, x, y];
+
+            for (int i = 0; i < z || i < RoomInput.GetLength(0); i++)
+            {
+                for (int j = 0; j < x || j < RoomInput.GetLength(1); j++)
+                {
+                    for (int k = 0; k < y || k < RoomInput.GetLength(2); k++)
+                    {
+                        if (i < z && j < x && k < y)
+                            temp[i, j, k] = RoomInput[i, j, k];
+                        else
+                            temp[i, j, k] = RoomInput[i, j, k];
+
+                    
+                    }
+                }
+            }
+
+
+
         }
 
     }
