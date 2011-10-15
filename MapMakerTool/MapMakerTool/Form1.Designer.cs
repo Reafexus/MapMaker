@@ -99,18 +99,18 @@
             this.sevenzero = new System.Windows.Forms.TextBox();
             this.CurrentLevel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.UpBox = new System.Windows.Forms.CheckBox();
+            this.DownBox = new System.Windows.Forms.CheckBox();
+            this.EastBox = new System.Windows.Forms.CheckBox();
+            this.WestBox = new System.Windows.Forms.CheckBox();
+            this.TreasureType = new System.Windows.Forms.RadioButton();
+            this.BossType = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.EnemiesType = new System.Windows.Forms.RadioButton();
+            this.SouthBox = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.SpecialType = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -811,70 +811,70 @@
             this.label4.TabIndex = 83;
             this.label4.Text = "Current Level";
             // 
-            // checkBox1
+            // UpBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(339, 124);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox1.Size = new System.Drawing.Size(40, 17);
-            this.checkBox1.TabIndex = 84;
-            this.checkBox1.Text = "Up";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.UpBox.AutoSize = true;
+            this.UpBox.Location = new System.Drawing.Point(339, 124);
+            this.UpBox.Name = "UpBox";
+            this.UpBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.UpBox.Size = new System.Drawing.Size(40, 17);
+            this.UpBox.TabIndex = 84;
+            this.UpBox.Text = "Up";
+            this.UpBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // DownBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(364, 234);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(54, 17);
-            this.checkBox2.TabIndex = 85;
-            this.checkBox2.Text = "Down";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.DownBox.AutoSize = true;
+            this.DownBox.Location = new System.Drawing.Point(364, 234);
+            this.DownBox.Name = "DownBox";
+            this.DownBox.Size = new System.Drawing.Size(54, 17);
+            this.DownBox.TabIndex = 85;
+            this.DownBox.Text = "Down";
+            this.DownBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // EastBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(384, 179);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(47, 17);
-            this.checkBox3.TabIndex = 86;
-            this.checkBox3.Text = "East";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.EastBox.AutoSize = true;
+            this.EastBox.Location = new System.Drawing.Point(384, 179);
+            this.EastBox.Name = "EastBox";
+            this.EastBox.Size = new System.Drawing.Size(47, 17);
+            this.EastBox.TabIndex = 86;
+            this.EastBox.Text = "East";
+            this.EastBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // WestBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(306, 178);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox4.Size = new System.Drawing.Size(51, 17);
-            this.checkBox4.TabIndex = 87;
-            this.checkBox4.Text = "West";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.WestBox.AutoSize = true;
+            this.WestBox.Location = new System.Drawing.Point(306, 178);
+            this.WestBox.Name = "WestBox";
+            this.WestBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.WestBox.Size = new System.Drawing.Size(51, 17);
+            this.WestBox.TabIndex = 87;
+            this.WestBox.Text = "West";
+            this.WestBox.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // TreasureType
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(378, 272);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButton1.Size = new System.Drawing.Size(67, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Treasure";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.TreasureType.AutoSize = true;
+            this.TreasureType.Location = new System.Drawing.Point(378, 272);
+            this.TreasureType.Name = "TreasureType";
+            this.TreasureType.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TreasureType.Size = new System.Drawing.Size(67, 17);
+            this.TreasureType.TabIndex = 0;
+            this.TreasureType.TabStop = true;
+            this.TreasureType.Text = "Treasure";
+            this.TreasureType.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // BossType
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(379, 295);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(48, 17);
-            this.radioButton10.TabIndex = 9;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Boss";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.BossType.AutoSize = true;
+            this.BossType.Location = new System.Drawing.Point(379, 295);
+            this.BossType.Name = "BossType";
+            this.BossType.Size = new System.Drawing.Size(48, 17);
+            this.BossType.TabIndex = 9;
+            this.BossType.TabStop = true;
+            this.BossType.Text = "Boss";
+            this.BossType.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -894,26 +894,26 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "North";
             // 
-            // radioButton3
+            // EnemiesType
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(306, 269);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButton3.Size = new System.Drawing.Size(65, 17);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Enemies";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.EnemiesType.AutoSize = true;
+            this.EnemiesType.Location = new System.Drawing.Point(306, 269);
+            this.EnemiesType.Name = "EnemiesType";
+            this.EnemiesType.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EnemiesType.Size = new System.Drawing.Size(65, 17);
+            this.EnemiesType.TabIndex = 12;
+            this.EnemiesType.TabStop = true;
+            this.EnemiesType.Text = "Enemies";
+            this.EnemiesType.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // SouthBox
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(364, 198);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 88;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.SouthBox.AutoSize = true;
+            this.SouthBox.Location = new System.Drawing.Point(364, 198);
+            this.SouthBox.Name = "SouthBox";
+            this.SouthBox.Size = new System.Drawing.Size(15, 14);
+            this.SouthBox.TabIndex = 88;
+            this.SouthBox.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
@@ -924,17 +924,17 @@
             this.checkBox6.TabIndex = 89;
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // SpecialType
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(306, 292);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButton2.Size = new System.Drawing.Size(54, 17);
-            this.radioButton2.TabIndex = 90;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Empty";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.SpecialType.AutoSize = true;
+            this.SpecialType.Location = new System.Drawing.Point(306, 292);
+            this.SpecialType.Name = "SpecialType";
+            this.SpecialType.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.SpecialType.Size = new System.Drawing.Size(60, 17);
+            this.SpecialType.TabIndex = 90;
+            this.SpecialType.TabStop = true;
+            this.SpecialType.Text = "Special";
+            this.SpecialType.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -982,13 +982,13 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.SpecialType);
             this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.SouthBox);
+            this.Controls.Add(this.WestBox);
+            this.Controls.Add(this.EastBox);
+            this.Controls.Add(this.DownBox);
+            this.Controls.Add(this.UpBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CurrentLevel);
             this.Controls.Add(this.sevenseven);
@@ -1059,11 +1059,11 @@
             this.Controls.Add(this.Depth);
             this.Controls.Add(this.Width);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.EnemiesType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton10);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.BossType);
+            this.Controls.Add(this.TreasureType);
             this.Name = "Form1";
             this.Text = "Map Creator";
             this.ResumeLayout(false);
@@ -1143,18 +1143,18 @@
         private System.Windows.Forms.TextBox sevenzero;
         private System.Windows.Forms.TextBox CurrentLevel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.CheckBox UpBox;
+        private System.Windows.Forms.CheckBox DownBox;
+        private System.Windows.Forms.CheckBox EastBox;
+        private System.Windows.Forms.CheckBox WestBox;
+        private System.Windows.Forms.RadioButton TreasureType;
+        private System.Windows.Forms.RadioButton BossType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.RadioButton EnemiesType;
+        private System.Windows.Forms.CheckBox SouthBox;
         private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton SpecialType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
