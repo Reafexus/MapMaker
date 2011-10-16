@@ -662,11 +662,12 @@ namespace MapMakerTool
             if (!changingRoom)
             {
                 int temp = int.Parse(CurrRoom.Text);
-                if (EnemiesType.Checked)
+                if (EnemiesType.Checked && temp > 0)
                 {
                     temp += 64;
                 }
-                else temp -= 64;
+                else if (temp > 0) temp -= 64;
+                else NoRoomType.Checked = true;
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -676,11 +677,12 @@ namespace MapMakerTool
             if (!changingRoom)
             {
                 int temp = int.Parse(CurrRoom.Text);
-                if (TreasureType.Checked)
+                if (TreasureType.Checked && temp > 0)
                 {
                     temp += 128;
                 }
-                else temp -= 128;
+                else if (temp > 0) temp -= 128;
+                else NoRoomType.Checked = true;
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -690,11 +692,12 @@ namespace MapMakerTool
             if (!changingRoom)
             {
                 int temp = int.Parse(CurrRoom.Text);
-                if (BossType.Checked)
+                if (BossType.Checked && temp > 0)
                 {
                     temp += 192;
                 }
-                else temp -= 192;
+                else if (temp > 0) temp -= 192;
+                else NoRoomType.Checked = true;
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -704,11 +707,10 @@ namespace MapMakerTool
             if (!changingRoom)
             {
                 int temp = int.Parse(CurrRoom.Text);
-                if (SpecialType.Checked)
-                {
-                    temp += 0;
-                }
-                else temp -= 0;
+                if (SpecialType.Checked && temp > 0)
+                { }
+                else if (temp > 0) { }
+                else NoRoomType.Checked = true;
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -721,6 +723,14 @@ namespace MapMakerTool
                 if (NoRoomType.Checked)
                 {
                     temp = 0;
+                    changingRoom = true;
+                    NorthBox.Checked = false;
+                    SouthBox.Checked = false;
+                    EastBox.Checked = false;
+                    WestBox.Checked = false;
+                    UpBox.Checked = false;
+                    DownBox.Checked = false;
+                    changingRoom = false;
                 }
                 CurrRoom.Text = temp.ToString();
             }
