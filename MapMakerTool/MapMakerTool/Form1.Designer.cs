@@ -109,12 +109,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EnemiesType = new System.Windows.Forms.RadioButton();
             this.SouthBox = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.NorthBox = new System.Windows.Forms.CheckBox();
             this.SpecialType = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.NoRoomType = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label3
@@ -821,6 +822,7 @@
             this.UpBox.TabIndex = 84;
             this.UpBox.Text = "Up";
             this.UpBox.UseVisualStyleBackColor = true;
+            this.UpBox.CheckedChanged += new System.EventHandler(this.UpBox_CheckedChanged);
             // 
             // DownBox
             // 
@@ -831,6 +833,7 @@
             this.DownBox.TabIndex = 85;
             this.DownBox.Text = "Down";
             this.DownBox.UseVisualStyleBackColor = true;
+            this.DownBox.CheckedChanged += new System.EventHandler(this.DownBox_CheckedChanged);
             // 
             // EastBox
             // 
@@ -841,6 +844,7 @@
             this.EastBox.TabIndex = 86;
             this.EastBox.Text = "East";
             this.EastBox.UseVisualStyleBackColor = true;
+            this.EastBox.CheckedChanged += new System.EventHandler(this.EastBox_CheckedChanged);
             // 
             // WestBox
             // 
@@ -852,6 +856,7 @@
             this.WestBox.TabIndex = 87;
             this.WestBox.Text = "West";
             this.WestBox.UseVisualStyleBackColor = true;
+            this.WestBox.CheckedChanged += new System.EventHandler(this.WestBox_CheckedChanged);
             // 
             // TreasureType
             // 
@@ -861,9 +866,9 @@
             this.TreasureType.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TreasureType.Size = new System.Drawing.Size(67, 17);
             this.TreasureType.TabIndex = 0;
-            this.TreasureType.TabStop = true;
             this.TreasureType.Text = "Treasure";
             this.TreasureType.UseVisualStyleBackColor = true;
+            this.TreasureType.CheckedChanged += new System.EventHandler(this.TreasureType_CheckedChanged);
             // 
             // BossType
             // 
@@ -872,9 +877,9 @@
             this.BossType.Name = "BossType";
             this.BossType.Size = new System.Drawing.Size(48, 17);
             this.BossType.TabIndex = 9;
-            this.BossType.TabStop = true;
             this.BossType.Text = "Boss";
             this.BossType.UseVisualStyleBackColor = true;
+            this.BossType.CheckedChanged += new System.EventHandler(this.BossType_CheckedChanged);
             // 
             // label1
             // 
@@ -902,9 +907,9 @@
             this.EnemiesType.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EnemiesType.Size = new System.Drawing.Size(65, 17);
             this.EnemiesType.TabIndex = 12;
-            this.EnemiesType.TabStop = true;
             this.EnemiesType.Text = "Enemies";
             this.EnemiesType.UseVisualStyleBackColor = true;
+            this.EnemiesType.CheckedChanged += new System.EventHandler(this.EnemiesType_CheckedChanged);
             // 
             // SouthBox
             // 
@@ -914,15 +919,17 @@
             this.SouthBox.Size = new System.Drawing.Size(15, 14);
             this.SouthBox.TabIndex = 88;
             this.SouthBox.UseVisualStyleBackColor = true;
+            this.SouthBox.CheckedChanged += new System.EventHandler(this.SouthBox_CheckedChanged);
             // 
-            // checkBox6
+            // NorthBox
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(364, 161);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 89;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.NorthBox.AutoSize = true;
+            this.NorthBox.Location = new System.Drawing.Point(364, 161);
+            this.NorthBox.Name = "NorthBox";
+            this.NorthBox.Size = new System.Drawing.Size(15, 14);
+            this.NorthBox.TabIndex = 89;
+            this.NorthBox.UseVisualStyleBackColor = true;
+            this.NorthBox.CheckedChanged += new System.EventHandler(this.NorthBox_CheckedChanged);
             // 
             // SpecialType
             // 
@@ -932,9 +939,9 @@
             this.SpecialType.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SpecialType.Size = new System.Drawing.Size(60, 17);
             this.SpecialType.TabIndex = 90;
-            this.SpecialType.TabStop = true;
             this.SpecialType.Text = "Special";
             this.SpecialType.UseVisualStyleBackColor = true;
+            this.SpecialType.CheckedChanged += new System.EventHandler(this.SpecialType_CheckedChanged);
             // 
             // label5
             // 
@@ -973,17 +980,31 @@
             this.label8.Text = "Checkboxes:      Mark what exits a room has.\r\nRadio Buttons:   Mark the Contents " +
                 "of the room";
             // 
+            // NoRoomType
+            // 
+            this.NoRoomType.AutoSize = true;
+            this.NoRoomType.Checked = true;
+            this.NoRoomType.Location = new System.Drawing.Point(355, 316);
+            this.NoRoomType.Name = "NoRoomType";
+            this.NoRoomType.Size = new System.Drawing.Size(70, 17);
+            this.NoRoomType.TabIndex = 95;
+            this.NoRoomType.TabStop = true;
+            this.NoRoomType.Text = "No Room";
+            this.NoRoomType.UseVisualStyleBackColor = true;
+            this.NoRoomType.CheckedChanged += new System.EventHandler(this.NoRoomType_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 357);
+            this.Controls.Add(this.NoRoomType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.SpecialType);
-            this.Controls.Add(this.checkBox6);
+            this.Controls.Add(this.NorthBox);
             this.Controls.Add(this.SouthBox);
             this.Controls.Add(this.WestBox);
             this.Controls.Add(this.EastBox);
@@ -1153,11 +1174,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton EnemiesType;
         private System.Windows.Forms.CheckBox SouthBox;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox NorthBox;
         private System.Windows.Forms.RadioButton SpecialType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton NoRoomType;
     }
 }

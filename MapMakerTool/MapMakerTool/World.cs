@@ -184,7 +184,7 @@ namespace MapMakerTool
             } 
             if (bin[6] == 0 && bin[7] == 0)
             {
-                temp.changeType("Empty");
+                temp.changeType("Special");
             }
             if (bin[6] == 0 && bin[7] == 1)
             {
