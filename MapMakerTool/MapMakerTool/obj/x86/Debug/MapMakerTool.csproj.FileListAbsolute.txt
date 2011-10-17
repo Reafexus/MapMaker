@@ -3,6 +3,6 @@ C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\bin\Debug\MapMakerTool.exe
 C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\bin\Debug\MapMakerTool.pdb
 C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\MapMakerTool.exe
 C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\MapMakerTool.pdb
-C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\MapMakerTool.Form1.resources
 C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Alex\MapMaker\MapMakerTool\MapMakerTool\obj\x86\Debug\MapMakerTool.Editor.resources

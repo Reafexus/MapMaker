@@ -1,6 +1,6 @@
 ﻿namespace MapMakerTool
 {
-    partial class Form1
+    partial class Editor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editor));
             this.label3 = new System.Windows.Forms.Label();
             this.Width = new System.Windows.Forms.TextBox();
             this.Depth = new System.Windows.Forms.TextBox();
@@ -116,6 +116,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.NoRoomType = new System.Windows.Forms.RadioButton();
+            this.ErrorMessage = new System.Windows.Forms.TextBox();
+            this.CreateWorld = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -993,11 +996,40 @@
             this.NoRoomType.UseVisualStyleBackColor = true;
             this.NoRoomType.CheckedChanged += new System.EventHandler(this.NoRoomType_CheckedChanged);
             // 
-            // Form1
+            // ErrorMessage
+            // 
+            this.ErrorMessage.Location = new System.Drawing.Point(14, 339);
+            this.ErrorMessage.Name = "ErrorMessage";
+            this.ErrorMessage.ReadOnly = true;
+            this.ErrorMessage.Size = new System.Drawing.Size(456, 20);
+            this.ErrorMessage.TabIndex = 96;
+            // 
+            // CreateWorld
+            // 
+            this.CreateWorld.Location = new System.Drawing.Point(14, 366);
+            this.CreateWorld.Name = "CreateWorld";
+            this.CreateWorld.Size = new System.Drawing.Size(87, 23);
+            this.CreateWorld.TabIndex = 97;
+            this.CreateWorld.Text = "Create World";
+            this.CreateWorld.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(119, 365);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 99;
+            this.button3.Text = "Export";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 357);
+            this.ClientSize = new System.Drawing.Size(483, 404);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.CreateWorld);
+            this.Controls.Add(this.ErrorMessage);
             this.Controls.Add(this.NoRoomType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -1085,7 +1117,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BossType);
             this.Controls.Add(this.TreasureType);
-            this.Name = "Form1";
+            this.Name = "Editor";
             this.Text = "Map Creator";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1181,5 +1213,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton NoRoomType;
+        private System.Windows.Forms.TextBox ErrorMessage;
+        private System.Windows.Forms.Button CreateWorld;
+        private System.Windows.Forms.Button button3;
     }
 }

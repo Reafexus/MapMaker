@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MapMakerTool
 {
-    public partial class Form1 : Form
+    public partial class Editor : Form
     {
         private World World;
         private TextBox[,] Map;
@@ -20,12 +20,11 @@ namespace MapMakerTool
 
         private bool changingRoom;
 
-        public Form1(World w)
+        public Editor(World w)
         {
             InitializeComponent();
             World = w;
             World.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(Depth.Text));
-            // InitializeComponent();
             createMapArray();
             updateMap(World.RoomInput);
         }
@@ -121,6 +120,8 @@ namespace MapMakerTool
         {
             if (int.Parse(Height.Text) > 8)
             {
+               ErrorMessage.Text = "There cannot be more than 8 rows.";
+                   
                 Height.Text = World.Height.ToString();
             }
             World.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(Depth.Text));
@@ -132,6 +133,7 @@ namespace MapMakerTool
         {
             if (int.Parse(Width.Text) > 8)
             {
+                ErrorMessage.Text = "There cannot be more than 8 columns.";
                 Width.Text = World.Width.ToString();
             }
             World.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(Depth.Text));
@@ -140,10 +142,6 @@ namespace MapMakerTool
 
         private void Depth_TextChanged(object sender, EventArgs e)
         {
-            if (int.Parse(Depth.Text) > 8)
-            {
-                Depth.Text = World.Depth.ToString();
-            }
             if (int.Parse(Depth.Text) < CurrLevel)
             {
                 CurrLevel = 0;
@@ -202,7 +200,7 @@ namespace MapMakerTool
             { row = 6; }
             else if (CurrRoom.Name.Substring(0, 5).Contains("seven"))
             { row = 7; }
-            
+
             if (CurrRoom.Name.Substring(3).Contains("zero"))
             { col = 0; }
             else if (CurrRoom.Name.Substring(3).Contains("one"))
@@ -647,8 +645,14 @@ namespace MapMakerTool
                     CurrRoom.Text = temp.ToString();
                 }
             }
-            else { changingRoom = true; UpBox.Checked = false; changingRoom = false; }
-        
+            else
+            {
+                changingRoom = true;
+                UpBox.Checked = false;
+                ErrorMessage.Text = "You cannot add a path Up.";
+                changingRoom = false;
+            }
+
         }
 
         private void NorthBox_CheckedChanged(object sender, EventArgs e)
@@ -666,8 +670,14 @@ namespace MapMakerTool
                     CurrRoom.Text = temp.ToString();
                 }
             }
-            else { changingRoom = true; NorthBox.Checked = false; changingRoom = false; }
-        
+            else
+            {
+                changingRoom = true;
+                NorthBox.Checked = false;
+                ErrorMessage.Text = "You cannot add a North exit.";
+                changingRoom = false;
+            }
+
         }
 
         private void WestBox_CheckedChanged(object sender, EventArgs e)
@@ -685,8 +695,14 @@ namespace MapMakerTool
                     CurrRoom.Text = temp.ToString();
                 }
             }
-            else { changingRoom = true; WestBox.Checked = false; changingRoom = false; }
-        
+            else
+            {
+                changingRoom = true;
+                WestBox.Checked = false;
+                ErrorMessage.Text = "You cannot add a West exit.";
+                changingRoom = false;
+            }
+
         }
 
         private void SouthBox_CheckedChanged(object sender, EventArgs e)
@@ -704,8 +720,14 @@ namespace MapMakerTool
                     CurrRoom.Text = temp.ToString();
                 }
             }
-            else { changingRoom = true; SouthBox.Checked = false; changingRoom = false; }
-        
+            else
+            {
+                changingRoom = true;
+                SouthBox.Checked = false;
+                ErrorMessage.Text = "You cannot add a South exit.";
+                changingRoom = false;
+            }
+
         }
 
         private void DownBox_CheckedChanged(object sender, EventArgs e)
@@ -724,7 +746,13 @@ namespace MapMakerTool
                     CurrRoom.Text = temp.ToString();
                 }
             }
-            else { changingRoom = true; DownBox.Checked = false; changingRoom = false; }
+            else
+            {
+                changingRoom = true;
+                DownBox.Checked = false;
+                ErrorMessage.Text = "You cannot add a path Down.";
+                changingRoom = false;
+            }
         }
 
         private void EnemiesType_CheckedChanged(object sender, EventArgs e)
@@ -737,7 +765,12 @@ namespace MapMakerTool
                     temp += 64;
                 }
                 else if (temp > 0) temp -= 64;
-                else NoRoomType.Checked = true;
+                else
+                {
+                    ErrorMessage.Text = "There is no room here.";
+                    NoRoomType.Checked = true;
+
+                }
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -752,7 +785,12 @@ namespace MapMakerTool
                     temp += 128;
                 }
                 else if (temp > 0) temp -= 128;
-                else NoRoomType.Checked = true;
+                else
+                {
+                    ErrorMessage.Text = "There is no room here.";
+                    NoRoomType.Checked = true;
+
+                }
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -767,7 +805,12 @@ namespace MapMakerTool
                     temp += 192;
                 }
                 else if (temp > 0) temp -= 192;
-                else NoRoomType.Checked = true;
+                else
+                {
+                    ErrorMessage.Text = "There is no room here.";
+                    NoRoomType.Checked = true;
+
+                }
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -780,7 +823,12 @@ namespace MapMakerTool
                 if (SpecialType.Checked && temp > 0)
                 { }
                 else if (temp > 0) { }
-                else NoRoomType.Checked = true;
+                else
+                {
+                    ErrorMessage.Text = "There is no room here.";
+                    NoRoomType.Checked = true;
+
+                }
                 CurrRoom.Text = temp.ToString();
             }
         }
@@ -821,8 +869,16 @@ namespace MapMakerTool
                     CurrRoom.Text = temp.ToString();
                 }
             }
-            else { changingRoom = true; EastBox.Checked = false; changingRoom = false; }
-        
+            else
+            {
+                changingRoom = true;
+                EastBox.Checked = false;
+
+                ErrorMessage.Text = "There cannot be an East exit.";
+
+                changingRoom = false;
+            }
+
         }
 
 
