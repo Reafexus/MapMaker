@@ -15,6 +15,8 @@ namespace MapMakerTool
         private TextBox[,] Map;
         private int CurrLevel;
         private TextBox CurrRoom;
+        private int row;
+        private int col;
 
         private bool changingRoom;
 
@@ -114,11 +116,12 @@ namespace MapMakerTool
         }
 
 
+
         private void Height_TextChanged(object sender, EventArgs e)
         {
-            if (int.Parse(Width.Text) > 8)
+            if (int.Parse(Height.Text) > 8)
             {
-                Height.Text = World.Width.ToString();
+                Height.Text = World.Height.ToString();
             }
             World.ChangeWorldSize(int.Parse(Width.Text), int.Parse(Height.Text), int.Parse(Depth.Text));
             updateMap(World.RoomInput);
@@ -139,7 +142,7 @@ namespace MapMakerTool
         {
             if (int.Parse(Depth.Text) > 8)
             {
-                Width.Text = World.Width.ToString();
+                Depth.Text = World.Depth.ToString();
             }
             if (int.Parse(Depth.Text) < CurrLevel)
             {
@@ -181,68 +184,109 @@ namespace MapMakerTool
 
         }
 
+        private void CheckCoords()
+        {
+            if (CurrRoom.Name.Substring(0, 5).Contains("zero"))
+            { row = 0; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("one"))
+            { row = 1; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("two"))
+            { row = 2; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("three"))
+            { row = 3; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("four"))
+            { row = 4; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("five"))
+            { row = 5; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("six"))
+            { row = 6; }
+            else if (CurrRoom.Name.Substring(0, 5).Contains("seven"))
+            { row = 7; }
+            
+            if (CurrRoom.Name.Substring(3).Contains("zero"))
+            { col = 0; }
+            else if (CurrRoom.Name.Substring(3).Contains("one"))
+            { col = 1; }
+            else if (CurrRoom.Name.Substring(3).Contains("two"))
+            { col = 2; }
+            else if (CurrRoom.Name.Substring(3).Contains("three"))
+            { col = 3; }
+            else if (CurrRoom.Name.Substring(3).Contains("four"))
+            { col = 4; }
+            else if (CurrRoom.Name.Substring(3).Contains("five"))
+            { col = 5; }
+            else if (CurrRoom.Name.Substring(3).Contains("six"))
+            { col = 6; }
+            else if (CurrRoom.Name.Substring(3).Contains("seven"))
+            { col = 7; }
+        }
+
         private void updateRoomStatus()
         {
+            CheckCoords();
             changingRoom = true;
-            if (int.Parse(CurrRoom.Text) == 0)
+            if (CurrRoom.Text != "--")
             {
-                NoRoomType.Checked = true;
-                NorthBox.Checked = false;
-                SouthBox.Checked = false;
-                EastBox.Checked = false;
-                WestBox.Checked = false;
-                UpBox.Checked = false;
-                DownBox.Checked = false;
+                if (int.Parse(CurrRoom.Text) == 0)
+                {
+                    NoRoomType.Checked = true;
+                    NorthBox.Checked = false;
+                    SouthBox.Checked = false;
+                    EastBox.Checked = false;
+                    WestBox.Checked = false;
+                    UpBox.Checked = false;
+                    DownBox.Checked = false;
 
-            }
-            else
-            {
-                int[] bin = World.ToBinary(int.Parse(CurrRoom.Text));
-                if (bin[0] == 1)
-                {
-                    WestBox.Checked = true;
                 }
-                else WestBox.Checked = false;
-                if (bin[1] == 1)
+                else
                 {
-                    EastBox.Checked = true;
-                }
-                else EastBox.Checked = false;
-                if (bin[2] == 1)
-                {
-                    SouthBox.Checked = true;
-                }
-                else SouthBox.Checked = false;
-                if (bin[3] == 1)
-                {
-                    NorthBox.Checked = true;
-                }
-                else NorthBox.Checked = false;
-                if (bin[4] == 1)
-                {
-                    UpBox.Checked = true;
-                }
-                else UpBox.Checked = false;
-                if (bin[5] == 1)
-                {
-                    DownBox.Checked = true;
-                }
-                else DownBox.Checked = false;
-                if (bin[6] == 0 && bin[7] == 0)
-                {
-                    SpecialType.Checked = true;
-                }
-                if (bin[6] == 0 && bin[7] == 1)
-                {
-                    TreasureType.Checked = true;
-                }
-                if (bin[6] == 1 && bin[7] == 0)
-                {
-                    EnemiesType.Checked = true;
-                }
-                if (bin[6] == 1 && bin[7] == 1)
-                {
-                    BossType.Checked = true;
+                    int[] bin = World.ToBinary(int.Parse(CurrRoom.Text));
+                    if (bin[0] == 1)
+                    {
+                        WestBox.Checked = true;
+                    }
+                    else WestBox.Checked = false;
+                    if (bin[1] == 1)
+                    {
+                        EastBox.Checked = true;
+                    }
+                    else EastBox.Checked = false;
+                    if (bin[2] == 1)
+                    {
+                        SouthBox.Checked = true;
+                    }
+                    else SouthBox.Checked = false;
+                    if (bin[3] == 1)
+                    {
+                        NorthBox.Checked = true;
+                    }
+                    else NorthBox.Checked = false;
+                    if (bin[4] == 1)
+                    {
+                        UpBox.Checked = true;
+                    }
+                    else UpBox.Checked = false;
+                    if (bin[5] == 1)
+                    {
+                        DownBox.Checked = true;
+                    }
+                    else DownBox.Checked = false;
+                    if (bin[6] == 0 && bin[7] == 0)
+                    {
+                        SpecialType.Checked = true;
+                    }
+                    if (bin[6] == 0 && bin[7] == 1)
+                    {
+                        TreasureType.Checked = true;
+                    }
+                    if (bin[6] == 1 && bin[7] == 0)
+                    {
+                        EnemiesType.Checked = true;
+                    }
+                    if (bin[6] == 1 && bin[7] == 1)
+                    {
+                        BossType.Checked = true;
+                    }
                 }
             }
             changingRoom = false;
@@ -589,72 +633,98 @@ namespace MapMakerTool
 
         private void UpBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingRoom)
+            if (CurrLevel != 0)
             {
-                int temp = int.Parse(CurrRoom.Text);
-                if (UpBox.Checked)
+
+                if (!changingRoom)
                 {
-                    temp += 16;
+                    int temp = int.Parse(CurrRoom.Text);
+                    if (UpBox.Checked)
+                    {
+                        temp += 16;
+                    }
+                    else temp -= 16;
+                    CurrRoom.Text = temp.ToString();
                 }
-                else temp -= 16;
-                CurrRoom.Text = temp.ToString();
             }
+            else { changingRoom = true; UpBox.Checked = false; changingRoom = false; }
+        
         }
 
         private void NorthBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingRoom)
+            if (row != 0)
             {
-                int temp = int.Parse(CurrRoom.Text);
-                if (NorthBox.Checked)
+                if (!changingRoom)
                 {
-                    temp += 8;
+                    int temp = int.Parse(CurrRoom.Text);
+                    if (NorthBox.Checked)
+                    {
+                        temp += 8;
+                    }
+                    else temp -= 8;
+                    CurrRoom.Text = temp.ToString();
                 }
-                else temp -= 8;
-                CurrRoom.Text = temp.ToString();
             }
+            else { changingRoom = true; NorthBox.Checked = false; changingRoom = false; }
+        
         }
 
         private void WestBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingRoom)
+            if (col != 0)
             {
-                int temp = int.Parse(CurrRoom.Text);
-                if (WestBox.Checked)
+                if (!changingRoom)
                 {
-                    temp += 1;
+                    int temp = int.Parse(CurrRoom.Text);
+                    if (WestBox.Checked)
+                    {
+                        temp += 1;
+                    }
+                    else temp -= 1;
+                    CurrRoom.Text = temp.ToString();
                 }
-                else temp -= 1;
-                CurrRoom.Text = temp.ToString();
             }
+            else { changingRoom = true; WestBox.Checked = false; changingRoom = false; }
+        
         }
 
         private void SouthBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingRoom)
+            if (row != World.RoomInput.GetLength(1) - 1)
             {
-                int temp = int.Parse(CurrRoom.Text);
-                if (SouthBox.Checked)
+                if (!changingRoom)
                 {
-                    temp += 4;
+                    int temp = int.Parse(CurrRoom.Text);
+                    if (SouthBox.Checked)
+                    {
+                        temp += 4;
+                    }
+                    else temp -= 4;
+                    CurrRoom.Text = temp.ToString();
                 }
-                else temp -= 4;
-                CurrRoom.Text = temp.ToString();
             }
+            else { changingRoom = true; SouthBox.Checked = false; changingRoom = false; }
+        
         }
 
         private void DownBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingRoom)
+            if (CurrLevel != World.RoomInput.GetLength(0) - 1)
             {
-                int temp = int.Parse(CurrRoom.Text);
-                if (DownBox.Checked)
+
+                if (!changingRoom)
                 {
-                    temp += 32;
+                    int temp = int.Parse(CurrRoom.Text);
+                    if (DownBox.Checked)
+                    {
+                        temp += 32;
+                    }
+                    else temp -= 32;
+                    CurrRoom.Text = temp.ToString();
                 }
-                else temp -= 32;
-                CurrRoom.Text = temp.ToString();
             }
+            else { changingRoom = true; DownBox.Checked = false; changingRoom = false; }
         }
 
         private void EnemiesType_CheckedChanged(object sender, EventArgs e)
@@ -738,16 +808,21 @@ namespace MapMakerTool
 
         private void EastBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingRoom)
+            if (col != World.RoomInput.GetLength(2) - 1)
             {
-                int temp = int.Parse(CurrRoom.Text);
-                if (EastBox.Checked)
+                if (!changingRoom)
                 {
-                    temp += 2;
+                    int temp = int.Parse(CurrRoom.Text);
+                    if (EastBox.Checked)
+                    {
+                        temp += 2;
+                    }
+                    else temp -= 2;
+                    CurrRoom.Text = temp.ToString();
                 }
-                else temp -= 2;
-                CurrRoom.Text = temp.ToString();
             }
+            else { changingRoom = true; EastBox.Checked = false; changingRoom = false; }
+        
         }
 
 
