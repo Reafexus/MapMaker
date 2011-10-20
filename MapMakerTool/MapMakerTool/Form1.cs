@@ -643,6 +643,7 @@ namespace MapMakerTool
                     }
                     else temp -= 16;
                     CurrRoom.Text = temp.ToString();
+                    World.UpdateRoomValue(CurrLevel, row, col, temp);
                 }
             }
             else
@@ -668,6 +669,7 @@ namespace MapMakerTool
                     }
                     else temp -= 8;
                     CurrRoom.Text = temp.ToString();
+                    World.UpdateRoomValue(CurrLevel, row, col, temp);
                 }
             }
             else
@@ -693,6 +695,7 @@ namespace MapMakerTool
                     }
                     else temp -= 1;
                     CurrRoom.Text = temp.ToString();
+                    World.UpdateRoomValue(CurrLevel, row, col, temp);
                 }
             }
             else
@@ -718,6 +721,7 @@ namespace MapMakerTool
                     }
                     else temp -= 4;
                     CurrRoom.Text = temp.ToString();
+                    World.UpdateRoomValue(CurrLevel, row, col, temp);
                 }
             }
             else
@@ -744,6 +748,7 @@ namespace MapMakerTool
                     }
                     else temp -= 32;
                     CurrRoom.Text = temp.ToString();
+                    World.UpdateRoomValue(CurrLevel, row, col, temp);
                 }
             }
             else
@@ -772,6 +777,7 @@ namespace MapMakerTool
 
                 }
                 CurrRoom.Text = temp.ToString();
+                World.UpdateRoomValue(CurrLevel, row, col, temp);
             }
         }
 
@@ -792,6 +798,7 @@ namespace MapMakerTool
 
                 }
                 CurrRoom.Text = temp.ToString();
+                World.UpdateRoomValue(CurrLevel, row, col, temp);
             }
         }
 
@@ -812,6 +819,7 @@ namespace MapMakerTool
 
                 }
                 CurrRoom.Text = temp.ToString();
+                World.UpdateRoomValue(CurrLevel, row, col, temp);
             }
         }
 
@@ -830,6 +838,7 @@ namespace MapMakerTool
 
                 }
                 CurrRoom.Text = temp.ToString();
+                World.UpdateRoomValue(CurrLevel, row, col, temp);
             }
         }
 
@@ -851,6 +860,7 @@ namespace MapMakerTool
                     changingRoom = false;
                 }
                 CurrRoom.Text = temp.ToString();
+                World.UpdateRoomValue(CurrLevel, row, col, temp);
             }
         }
 
@@ -867,6 +877,7 @@ namespace MapMakerTool
                     }
                     else temp -= 2;
                     CurrRoom.Text = temp.ToString();
+                    World.UpdateRoomValue(CurrLevel, row, col, temp);
                 }
             }
             else
@@ -881,13 +892,17 @@ namespace MapMakerTool
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Export_Click(object sender, EventArgs e)
         {
             ExportMap export = new ExportMap(World.RoomInput);
             export.CreateFile();
         }
 
-
+        private void Import_Click(object sender, EventArgs e)
+        {
+            ImportMap import = new ImportMap();
+            updateMap(import.Map);
+        }
 
 
 

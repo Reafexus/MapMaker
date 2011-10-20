@@ -256,5 +256,10 @@ namespace MapMakerTool
 
         }
 
+
+        public void UpdateRoomValue(int CurrLevel, int row, int col, int temp)
+        {
+            RoomInput[CurrLevel, row, col] = temp;
+        }
     }
 }

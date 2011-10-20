@@ -118,7 +118,8 @@
             this.NoRoomType = new System.Windows.Forms.RadioButton();
             this.ErrorMessage = new System.Windows.Forms.TextBox();
             this.CreateWorld = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Export = new System.Windows.Forms.Button();
+            this.Import = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -978,10 +979,10 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(247, 4);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 26);
+            this.label8.Size = new System.Drawing.Size(229, 39);
             this.label8.TabIndex = 94;
-            this.label8.Text = "Checkboxes:      Mark what exits a room has.\r\nRadio Buttons:   Mark the Contents " +
-                "of the room";
+            this.label8.Text = "Checkboxes:      Mark what exits a room has.\r\n\r\nRadio Buttons:   Mark the Content" +
+                "s of the room";
             // 
             // NoRoomType
             // 
@@ -1013,22 +1014,33 @@
             this.CreateWorld.Text = "Create World";
             this.CreateWorld.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Export
             // 
-            this.button3.Location = new System.Drawing.Point(119, 365);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 99;
-            this.button3.Text = "Export";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Export.Location = new System.Drawing.Point(107, 365);
+            this.Export.Name = "Export";
+            this.Export.Size = new System.Drawing.Size(75, 23);
+            this.Export.TabIndex = 99;
+            this.Export.Text = "Export";
+            this.Export.UseVisualStyleBackColor = true;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
+            // 
+            // Import
+            // 
+            this.Import.Location = new System.Drawing.Point(188, 365);
+            this.Import.Name = "Import";
+            this.Import.Size = new System.Drawing.Size(75, 23);
+            this.Import.TabIndex = 100;
+            this.Import.Text = "Import";
+            this.Import.UseVisualStyleBackColor = true;
+            this.Import.Click += new System.EventHandler(this.Import_Click);
             // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 404);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Import);
+            this.Controls.Add(this.Export);
             this.Controls.Add(this.CreateWorld);
             this.Controls.Add(this.ErrorMessage);
             this.Controls.Add(this.NoRoomType);
@@ -1216,6 +1228,7 @@
         private System.Windows.Forms.RadioButton NoRoomType;
         private System.Windows.Forms.TextBox ErrorMessage;
         private System.Windows.Forms.Button CreateWorld;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Export;
+        private System.Windows.Forms.Button Import;
     }
 }

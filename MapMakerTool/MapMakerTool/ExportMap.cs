@@ -25,6 +25,7 @@ namespace MapMakerTool
         public void CreateFile()
         {
             stream.WriteLine(map.GetLength(0) + " " + map.GetLength(1) + " " + map.GetLength(2));
+            stream.WriteLine();
 
             for (int i = 0; i < map.GetLength(0); i++)
             {
